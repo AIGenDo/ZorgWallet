@@ -1,0 +1,59 @@
+html
+  head
+    style
+      include zwallet.css
+
+    title #{title}
+
+  body
+    include clientheader.pug
+
+    p.function Toevoegen zorgvoorziening aan contract
+
+    form(action=formaction method='POST')
+      table(border='0', cellpadding='2', cellspacing='1')
+        tbody
+          tr
+            td(width='200')
+              p.smalllabel Uitvoeren:
+            td
+              select(name='function')
+                option(value='addzorgvoorziening') Toevoegen zorgvoorziening aan contract
+
+          tr
+            td
+              p.smalllabel Zorgaanbieder:
+            td
+              select(name='agbcode')
+                option(value='11111111') Beterzorg
+                option(value='22222222') Anderzorg
+
+          tr
+            td
+              p.smalllabel Zorg:
+            td
+              select(name='zorgcode')
+                option(value='ALH002') Alfahulp (2 uur)
+                option(value='VPH001') Verpleeghulp (1 uur)
+                option(value='FYS005') Fysiotherapie
+                option(value='VRV100') Vervoer (tot 100 km)
+                option(value='RLS010') Rolstoel
+
+          tr
+            td
+              p.smalllabel Zorgfrequentie:
+            td
+              select(name='frequentie')
+                option(value='1x per week') 1x per week
+                option(value='2x per week') 2x per week
+                option(value='3x per week') 3x per week
+                option(value='4x per week') 4x per week
+                option(value='5x per week') 5x per week
+                option(value='6x per week') 6x per week
+                option(value='7x per week') 7x per week
+                option(value='1x per maand') 1x per maand
+                option(value='2x per maand') 2x per maand
+                option(value='nvt') n.v.t.
+
+      <br>
+      <input type = "submit" class="buttonr" value = "Verzenden">

@@ -1,0 +1,50 @@
+html
+  head
+    style
+      include zwallet.css
+
+    title #{title}
+
+  body
+    include clientheader.pug
+
+    p.function Overzicht berichten in logboek
+
+    table(border="0", cellpadding="4", cellspacing="1")
+      thead
+        tr
+          th
+            p.smallblue Bericht nr.
+          th
+            p.smallblue Datum/Tijd
+          th
+            p.smallblue Referentie
+          th
+            p.smallblue Aangemaakt door
+          th
+            p.smallblue Titel
+          th
+            p.smallblue Text
+          th
+            p.smallblue Bericht
+
+      tbody
+        if notes
+          each note, i in notes
+            tr
+              td(align="center")
+                p.smallgrey= note.refnumber
+              td(align="center")
+                p.smallgrey= note.dtime
+              td(align="center")
+                p.smallgrey= note.reference
+              td(align="center")
+                p.smallgrey= note.creatorname
+              td(align="center")
+                p.smallgrey= note.title
+              td(align="left")
+                p.smallgrey= note.body
+              td(align="center")
+                if note.docref != ""
+                  a(href=note.docref, target="_blank")
+                    p.smallblue Klik voor bericht

@@ -1,0 +1,41 @@
+div(class="container")
+  a(href="/umcg/main")
+    img.image(align="bottom", src="images/" + imglogo, width="450", height="135")
+  div(class="bottomcenter")= loginname
+  div(class="bottomleft")= date
+
+br
+br
+
+table(border="0", cellpadding="2", cellspacing="1")
+  tbody
+    tr
+      td(width="200")
+        p.label Client:
+      td
+        p= username
+    tr
+      td
+        p.label BSN:
+      td
+        p= userid
+    tr
+      td
+        p.label Geboortedatum:
+      td
+        p= birthdate
+    tr
+      td
+        p.label Woonplaats:
+      td
+        p= gemeente
+    tr
+      td
+        p.label
+      td
+        p.colorgreen= message
+    //tr
+      //td
+        //p.label
+      //td
+        //p.colorred= errmessage

@@ -1,0 +1,26 @@
+html
+  head
+    style
+      include zwallet.css
+
+    title Hospital @ Home
+
+  body
+    include clientheader.pug
+
+    p.function Hoofdmenu
+
+    form(action=formaction method='POST')
+      table(border='0', cellpadding='2', cellspacing='1')
+        tbody
+          tr
+            td(width='200')
+              p.smalllabel Uitvoeren:
+            td
+              select(name='function')
+                // each fo, i in funcoptions
+                each fo in funcoptions
+                  option(value=fo.name) #{fo.label}
+
+      <br>
+      <input type = "submit" class="buttonr" value = "Verzenden">

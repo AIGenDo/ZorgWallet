@@ -1,0 +1,46 @@
+body { background-color: white; }
+p { font-family:verdana; color:#0000cc; font-size: 16px; }
+p.small { font-family:verdana; color:#0000cc; font-size: 14px; }
+p.link { font-family:verdana; color:#0000cc; font-size: 12px; }
+p.label { font-family:verdana; color:darkslategrey; font-size: 16px; }
+p.smalllabel { font-family:verdana; color:darkslategrey; font-size: 14px; }
+p.function { font-family:verdana; color:#fa5224; font-size: 20px; }
+p.colorgreen { font-family:verdana; color:darkgreen; font-size: 16px; }
+p.colorred { font-family:verdana; color:red; font-size: 16px; }
+p.smallgrey { font-family:verdana; color:darkslategrey; font-size: 12px; }
+p.smallblue { font-family:verdana; color:black; font-size: 12px; }
+
+.container {
+  position: relative;
+  text-align: left;
+  font-family:verdana;
+  font-style:italic;
+  color: #fa5224;
+  font-size: 16px;
+}
+.bottomcenter {
+  position: absolute;
+  bottom: 14px;
+  left: 450px;
+}
+.bottomleft {
+  position: absolute;
+  bottom: 14px;
+  left: 700px;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:verdana; color:darkgreen; font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s; /* for hovering */
+  cursor: pointer;
+}
+.buttonr {border-radius: 8px;}
+.buttonr:hover {background-color: #e7e7e7;}

@@ -1,0 +1,43 @@
+html
+  head
+    style
+      include zwallet.css
+
+    title #{title}
+
+  body
+    include clientheader.pug
+
+    p.function Leveren zorg
+
+    form(action=formaction method='POST')
+      table(border='0', cellpadding='2', cellspacing='1')
+        tbody
+          tr
+            td(width='200')
+              p.smalllabel Uitvoeren:
+            td
+              select(name='function')
+                option(value='deliverzorg') Leveren zorg
+
+          tr
+            td
+              p.smalllabel Zorgaanbieder:
+            td
+              select(name='agbcode')
+                option(value='11111111') Beterzorg
+                option(value='22222222') Anderzorg
+
+          tr
+            td
+              p.smalllabel Zorg:
+            td
+              select(name='zorgcode')
+                option(value='ALH002') Alfahulp (2 uur)
+                option(value='VPH001') Verpleeghulp (1 uur)
+                option(value='FYS005') Fysiotherapie
+                option(value='VRV100') Vervoer (tot 100 km)
+                option(value='RLS010') Rolstoel
+
+      <br>
+      <input type = "submit" class="buttonr" value = "Verzenden">

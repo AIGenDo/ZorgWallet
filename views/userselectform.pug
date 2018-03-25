@@ -1,0 +1,34 @@
+html
+  head
+    style
+      include zwallet.css
+
+    title #{title}
+
+  body
+    include clientheader.pug
+
+    p.function Selecteren client
+
+    form(action=formaction method='POST')
+      table(border='0', cellpadding='4', cellspacing='1')
+        tbody
+          tr
+            td(width='200')
+              p.smalllabel Uitvoeren:
+            td
+              select(name='function')
+                option(value='selectuser') Selecteren client
+          tr
+            td
+              p.smalllabel Client:
+            td
+              select(name='userid')
+                option(value="0123.45.678") 0123.45.678 - Geertje Heersma
+                option(value="0789.56.234") 0789.56.234 - Gideon van Aemstel
+                option(value="1111.11.111") 1111.11.111 - Willemijn Beaufort
+                option(value="2222.22.222") 2222.22.222 - Jan Jansen
+                option(value="3333.33.333") 3333.33.333 - Manon de Vries
+
+      <br>
+      <input type = "submit" class="buttonr" value = "Verzenden">

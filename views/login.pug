@@ -1,0 +1,38 @@
+html
+  head
+    style
+      include zwallet.css
+
+    title #{title}
+
+  body
+    include header.pug
+
+    form(action='/umcg/login' method='POST')
+      table(border='0', cellpadding='4', cellspacing='1')
+        tbody
+          tr
+            td(width='200')
+              p.label Client:
+            td
+              select(name='loginid')
+                //option(value="0010-0001") Moulijn (Roteb Lease)
+                //option(value="0010-0002") Van Hanegem (RL Verkoop en Beheer)
+                //option(value="0011-0001") Viergever (VRR Wagenpark)
+                //option(value="0011-0002") Willems (VRR Wagenpark)
+                //option(value="0110-0001") Van Bronckhorst (Hobrand)
+                option(value="0123.45.678") Geertje Heersma
+                option(value="0789.56.234") Gideon van Aemstel
+                option(value="1111.11.111") Willemijn Beaufort
+                option(value="2222.22.222") Jan Jansen
+                option(value="3333.33.333") Manon de Vries
+                option(value="UMCG-0650321") Dr. F.J.C. Slauerhoff
+
+          tr
+            td
+              p.label Wachtwoord:
+            td
+              input(type='text', name='password', value='')
+
+      <br>
+      <input type = "submit" class="buttonr" value = "Verzenden">

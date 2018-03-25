@@ -1,0 +1,47 @@
+html
+  head
+    style
+      include zwallet.css
+
+    title #{title}
+
+  body
+    include clientheader.pug
+
+    p.function Overzicht gecontracteerde zorgvoorzieningen
+
+    table(border="0", cellpadding="4", cellspacing="1")
+      thead
+        tr
+          th
+            p.smallblue Zorgaanbieder
+          th
+            p.smallblue AGB code
+          th
+            p.smallblue Zorgcode
+          th
+            p.smallblue Beschrijving
+          th
+            p.smallblue Kosten
+          th
+            p.smallblue Eigen bijdrage
+          th
+            p.smallblue Frequentie
+      tbody
+        if zorgvoorziening
+          each zv, i in zorgvoorziening
+            tr
+              td(align="center")
+                p.smallgrey= zv.zanaam
+              td(align="center")
+                p.smallgrey= zv.agbcode
+              td(align="center")
+                p.smallgrey= zv.zorgcode
+              td(align="center")
+                p.smallgrey= zv.beschrijving
+              td(align="center")
+                p.smallgrey= zv.kosten
+              td(align="center")
+                p.smallgrey= zv.eigenbijdrage
+              td(align="center")
+                p.smallgrey= zv.frequentie

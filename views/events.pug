@@ -1,0 +1,76 @@
+html
+  head
+    style
+      include zwallet.css
+
+    title #{title}
+
+  body
+    include clientheader.pug
+
+    p.function Overzicht events & alarmen
+
+    table(border="0", cellpadding="4", cellspacing="1")
+      thead
+        tr
+          th
+            p.smallblue Event#
+          th
+            p.smallblue Severity
+          th
+            p.smallblue Date/Time
+          th
+            p.smallblue Source
+          th
+            p.smallblue Type
+          th
+            p.smallblue Value
+          th
+            p.smallblue Data
+          th
+            p.smallblue Data reference
+
+      tbody
+        if events
+          each ev, i in events
+            tr
+              td(align="center")
+                p.smallgrey= ev.refnumber
+              td(align="center")
+                p.smallgrey= ev.severity
+              td(align="center")
+                p.smallgrey= ev.dtime
+              td(align="center")
+                p.smallgrey= ev.source
+              td(align="center")
+                p.smallgrey= ev.type
+              td(align="center")
+                p.smallgrey= ev.value
+              td(align="left")
+                p.smallgrey= ev.data
+              td(align="left")
+                if ev.dataref != ""
+                  a(href=ev.dataref, target="_blank")
+                    p.link Click for source data
+
+    br
+    br
+    form(action=formaction method='POST')
+      table(border='0', cellpadding='2', cellspacing='1')
+        tbody
+          tr
+            td(width='200')
+              p.smalllabel Uitvoeren:
+            td
+              select(name='function')
+                each fo, i in funcoptions
+                  option(value=fo.name) #{fo.label}
+
+          tr
+            td
+              p.smalllabel Referentie nummer:
+            td
+              input(type='number', name='refnumber', value='')
+
+      <br>
+      <input type = "submit" class="buttonr" value = "Verzenden">

@@ -1,0 +1,69 @@
+html
+  head
+    style
+      include zwallet.css
+
+    title #{title}
+
+  body
+    include clientheader.pug
+
+    p.function Overzicht Zorgwallet
+
+    table(border="0", cellpadding="2", cellspacing="1")
+      tbody
+        tr
+          td(width="200")
+            p.smalllabel Maximale periodebijdrage:
+          td
+            p.small= mpb
+        tr
+          td
+            p.smalllabel Totaal eigen bijdrage deze periode:
+          td
+            p.small= totaaleb
+    br
+
+    table(border="0", cellpadding="4", cellspacing="1")
+      thead
+        tr
+          th
+            p.smallblue Zorgaanbieder
+          th
+            p.smallblue AGB code
+          th
+            p.smallblue Zorgcode
+          th
+            p.smallblue Beschrijving
+          th
+            p.smallblue Datum
+          th
+            p.smallblue Kosten
+          th
+            p.smallblue Eigen bijdrage
+          th
+            p.smallblue Afgetekend J/N
+          th
+            p.smallblue Betaald J/N
+      tbody
+        if zorg
+          each zv, i in zorg
+            tr
+              td(align="center")
+                p.smallgrey= zv.zanaam
+              td(align="center")
+                p.smallgrey= zv.agbcode
+              td(align="center")
+                p.smallgrey= zv.zorgcode
+              td(align="center")
+                p.smallgrey= zv.beschrijving
+              td(align="center")
+                p.smallgrey= zv.datum
+              td(align="center")
+                p.smallgrey= zv.kosten
+              td(align="center")
+                p.smallgrey= zv.eigenbijdrage
+              td(align="center")
+                p.smallgrey= zv.afgetekend
+              td(align="center")
+                p.smallgrey= zv.betaald
